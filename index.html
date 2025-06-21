@@ -3,343 +3,840 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Евгений Малин — Портфолио Шеф-Повара</title>
+  <meta name="description" content="Портфолио шеф-повара Евгения Малина">
+  <title>Евгений Малин — Шеф-повар высокой кухни</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Raleway:wght@300;400;500;600&display=swap');
+
+    :root {
+      --gold: #c39d63;
+      --dark: #1a1a1a;
+      --light: #f8f8f8;
+      --text: #333;
+      --text-light: #666;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
-      font-family: 'Helvetica Neue', sans-serif;
+      font-family: 'Raleway', sans-serif;
       margin: 0;
       padding: 0;
       background: #fff;
-      color: #333;
-      line-height: 1.6;
+      color: var(--text);
+      line-height: 1.8;
+      overflow-x: hidden;
     }
+    
     header {
-      background: #1a1a1a;
+      background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
       color: white;
-      padding: 60px 20px;
+      padding: 80px 20px;
       text-align: center;
       position: relative;
-      min-height: 400px;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
     }
-    header::before {
-      content: "";
-      background: url('https://via.placeholder.com/1200x600') center/cover no-repeat;
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      opacity: 0.25;
-      z-index: 0;
+    
+    .header-content {
+      max-width: 900px;
+      position: relative;
+      z-index: 2;
+      animation: fadeInUp 1.2s ease-out;
     }
+    
     header h1 {
       margin: 0;
-      font-size: 3rem;
+      font-size: 4.5rem;
       font-family: 'Playfair Display', serif;
-      position: relative;
-      z-index: 1;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
     }
-    header p {
-      font-size: 1.4rem;
-      position: relative;
-      z-index: 1;
-      margin-top: 10px;
+    
+    header h2 {
+      font-size: 1.8rem;
+      font-weight: 300;
+      margin-bottom: 30px;
+      color: var(--gold);
+      font-style: italic;
     }
-    header .btn {
+    
+    .btn {
       display: inline-block;
       margin-top: 30px;
-      padding: 12px 24px;
-      background: white;
-      color: #1a1a1a;
+      padding: 15px 35px;
+      background: var(--gold);
+      color: var(--dark);
       text-decoration: none;
-      border-radius: 4px;
-      font-weight: bold;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
       position: relative;
       z-index: 1;
-      transition: all 0.3s ease;
+      transition: all 0.4s ease;
+      border: 2px solid var(--gold);
+      letter-spacing: 1px;
     }
-    header .btn:hover {
-      background: #e0e0e0;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    
+    .btn:hover {
+      background: transparent;
+      color: var(--gold);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
     }
+    
+    .btn i {
+      margin-left: 8px;
+    }
+    
     section {
-      padding: 40px 20px;
-      max-width: 900px;
+      padding: 100px 20px;
+      max-width: 1200px;
       margin: auto;
     }
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
+    
+    h2.section-title {
+      font-size: 2.8rem;
+      margin-bottom: 60px;
       font-family: 'Playfair Display', serif;
-      color: #1a1a1a;
+      color: var(--dark);
+      text-align: center;
       position: relative;
     }
-    h2::after {
+    
+    h2.section-title:after {
       content: "";
       position: absolute;
-      bottom: -10px;
-      left: 0;
-      width: 80px;
-      height: 3px;
-      background: #c39d63;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: var(--gold);
     }
-    .portfolio, .testimonials {
-      display: grid;
-      gap: 20px;
+    
+    .about-content {
+      display: flex;
+      gap: 50px;
+      align-items: center;
     }
-    .portfolio {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    
+    .about-text {
+      flex: 1;
     }
-    .portfolio-item {
-      background: #f9f9f9;
-      border-radius: 8px;
+    
+    .about-text p {
+      font-size: 1.15rem;
+      line-height: 1.9;
+      margin-bottom: 25px;
+      color: var(--text-light);
+      text-align: justify;
+    }
+    
+    .about-text p:first-child:first-letter {
+      font-size: 3.5rem;
+      font-family: 'Playfair Display', serif;
+      color: var(--gold);
+      float: left;
+      line-height: 0.8;
+      margin-right: 10px;
+      margin-top: 5px;
+    }
+    
+    .about-image {
+      flex: 1;
+      border-radius: 10px;
       overflow: hidden;
-      transition: transform 0.3s ease;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      transform: rotate(-2deg);
+      transition: transform 0.4s ease;
     }
-    .portfolio-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    
+    .about-image:hover {
+      transform: rotate(0) scale(1.02);
     }
-    .portfolio-item img {
+    
+    .about-image img {
       width: 100%;
-      height: 200px;
+      height: 500px;
       object-fit: cover;
-      border-radius: 8px 8px 0 0;
-    }
-    .portfolio-item-content {
-      padding: 15px;
-    }
-    .portfolio-item p {
-      margin: 5px 0;
-    }
-    .expertise ul {
-      columns: 2;
-      list-style-type: none;
-      padding: 0;
-    }
-    .expertise li {
-      position: relative;
-      padding-left: 25px;
-      margin-bottom: 10px;
-    }
-    .expertise li::before {
-      content: "★";
-      position: absolute;
-      left: 0;
-      color: #c39d63;
-    }
-    .testimonial-slider {
-      position: relative;
-      overflow: hidden;
-      background: #f8f8f8;
-      padding: 30px;
-      border-radius: 8px;
-      min-height: 180px;
-    }
-    .testimonial-slide {
-      display: none;
-      text-align: center;
-      animation: fadeIn 1s;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    .testimonial-slide.active {
       display: block;
     }
-    .testimonial-nav {
+    
+    .philosophy {
+      background: var(--light);
+    }
+    
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    
+    .philosophy-card {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
       text-align: center;
-      margin-top: 20px;
+      transition: all 0.4s ease;
     }
-    .testimonial-nav button {
-      background: #ccc;
-      border: none;
-      border-radius: 50%;
-      width: 12px;
-      height: 12px;
-      margin: 0 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
+    
+    .philosophy-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
     }
-    .testimonial-nav button:hover {
-      background: #999;
+    
+    .philosophy-card i {
+      font-size: 3.5rem;
+      color: var(--gold);
+      margin-bottom: 20px;
     }
-    .testimonial-nav button.active {
-      background: #c39d63;
-      transform: scale(1.2);
+    
+    .philosophy-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      font-family: 'Playfair Display', serif;
     }
-    footer {
+    
+    .kitchen-philosophy {
+      background: linear-gradient(rgba(0,0,0,0.03), rgba(0,0,0,0.03)), url('https://images.unsplash.com/photo-1514995669114-6081e934b693?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+      padding: 80px 40px;
+      border-radius: 15px;
+      margin: 60px 0;
+      position: relative;
+    }
+    
+    .kitchen-philosophy::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255,255,255,0.85);
+      border-radius: 15px;
+      z-index: 0;
+    }
+    
+    .kitchen-philosophy-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .philosophy-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      line-height: 1.6;
+      color: var(--dark);
       text-align: center;
+      margin-bottom: 40px;
+      font-style: italic;
+      position: relative;
+    }
+    
+    .philosophy-quote::before,
+    .philosophy-quote::after {
+      content: """;
+      font-size: 5rem;
+      color: var(--gold);
+      position: absolute;
+      opacity: 0.3;
+    }
+    
+    .philosophy-quote::before {
+      top: -30px;
+      left: -40px;
+    }
+    
+    .philosophy-quote::after {
+      bottom: -60px;
+      right: -40px;
+      transform: rotate(180deg);
+    }
+    
+    .philosophy-points {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+    
+    .philosophy-point {
+      background: white;
       padding: 30px;
-      background: #1a1a1a;
-      color: white;
-      font-size: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      border-left: 4px solid var(--gold);
     }
-    .contact-info {
+    
+    .philosophy-point h3 {
+      color: var(--dark);
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .philosophy-point h3 i {
+      color: var(--gold);
+    }
+    
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    
+    .portfolio-item {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      height: 350px;
+      transition: all 0.5s ease;
+    }
+    
+    .portfolio-item:hover {
+      transform: scale(1.03);
+    }
+    
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .portfolio-item:hover img {
+      transform: scale(1.1);
+    }
+    
+    .portfolio-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+      padding: 30px 20px;
+      color: white;
+      transform: translateY(20px);
+      opacity: 0;
+      transition: all 0.4s ease;
+    }
+    
+    .portfolio-item:hover .portfolio-overlay {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    
+    .portfolio-overlay h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .expertise-container {
+      display: flex;
+      gap: 50px;
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    }
+    
+    .skills-chart {
+      flex: 1;
+      padding: 50px 40px;
+      background: var(--dark);
+      color: white;
+    }
+    
+    .skills-list {
+      flex: 1;
+      padding: 50px 40px;
+    }
+    
+    .skill-bar {
+      margin-bottom: 30px;
+    }
+    
+    .skill-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    
+    .skill-progress {
+      height: 10px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    
+    .skill-progress span {
+      display: block;
+      height: 100%;
+      background: var(--gold);
+      border-radius: 5px;
+    }
+    
+    .skills-list ul {
+      list-style-type: none;
+    }
+    
+    .skills-list li {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+    
+    .skills-list li:before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 1.5rem;
+    }
+    
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 80px 20px 60px;
+      text-align: center;
+    }
+    
+    .contact-grid {
       display: flex;
       justify-content: center;
-      gap: 30px;
-      margin-top: 15px;
+      gap: 40px;
+      max-width: 800px;
+      margin: 0 auto;
       flex-wrap: wrap;
     }
-    .contact-info a {
-      color: #c39d63;
+    
+    .contact-card {
+      background: rgba(255,255,255,0.05);
+      padding: 40px 30px;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      min-width: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .contact-card:hover {
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-10px);
+    }
+    
+    .contact-card i {
+      font-size: 2.5rem;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    
+    .contact-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+    
+    .contact-card a {
+      color: white;
       text-decoration: none;
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 10px;
+      margin-top: 10px;
+      transition: color 0.3s ease;
+      font-size: 1.2rem;
     }
-    .contact-info a:hover {
-      text-decoration: underline;
+    
+    .contact-card a:hover {
+      color: var(--gold);
+    }
+    
+    .social-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 20px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50px;
+      transition: all 0.3s ease;
+    }
+    
+    .social-badge:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-3px);
+    }
+    
+    .social-badge i {
+      font-size: 1.5rem;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Адаптивность */
+    @media (max-width: 992px) {
+      header h1 {
+        font-size: 3.5rem;
+      }
+      
+      .about-content {
+        flex-direction: column;
+      }
+      
+      .expertise-container {
+        flex-direction: column;
+      }
+      
+      .about-text p:first-child:first-letter {
+        font-size: 2.8rem;
+      }
+      
+      .philosophy-quote {
+        font-size: 1.5rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      header {
+        padding: 60px 20px;
+      }
+      
+      header h1 {
+        font-size: 2.8rem;
+      }
+      
+      section {
+        padding: 70px 20px;
+      }
+      
+      h2.section-title {
+        font-size: 2.2rem;
+      }
+      
+      .contact-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .contact-card {
+        width: 100%;
+        max-width: 400px;
+      }
+      
+      .about-text p {
+        font-size: 1.05rem;
+        line-height: 1.8;
+      }
+      
+      .philosophy-quote {
+        font-size: 1.3rem;
+      }
+      
+      .philosophy-quote::before,
+      .philosophy-quote::after {
+        font-size: 3rem;
+      }
+      
+      .philosophy-quote::before {
+        top: -15px;
+        left: -20px;
+      }
+      
+      .philosophy-quote::after {
+        bottom: -30px;
+        right: -20px;
+      }
+      
+      .kitchen-philosophy {
+        padding: 40px 20px;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Евгений Малин</h1>
-    <blockquote style="font-style: italic; font-size: 1.3rem; margin: 20px auto; max-width: 700px; font-family: 'Playfair Display', serif;">
-        Шеф-повар высокой кухни — Октябрь Event Hall
-    </blockquote>
-    <a href="#" class="btn">Скачать резюме</a>
+    <div class="header-content">
+      <h1>Евгений Малин</h1>
+      <h2>Шеф-повар высокой кухни</h2>
+      <p style="max-width: 700px; margin: 0 auto 30px; font-size: 1.2rem;">Создаю гастрономические впечатления, где каждая деталь — от выбора ингредиентов до подачи — имеет значение</p>
+      <a href="#" class="btn">Скачать резюме <i class="fas fa-download"></i></a>
+    </div>
   </header>
 
-  <section>
-    <h2>Обо мне</h2>
-    <p>С шести лет я точно знал, что хочу стать поваром. Уже в 17 начал работать в легендарном ресторане Ц.Д.Л., где учился у австрийского шефа Юргена Ланга. Он стал моим наставником и научил меня тонкостям соусов и высокой кухни.</p>
-    <p>За более чем 15 лет я прошёл путь от классической французской школы до современной тосканской кухни. Стажировки у Умберто Кавина и Массимо Маммано помогли мне прочувствовать суть итальянской гастрономии — простота, вкус и идеальное сочетание с вином.</p>
-  </section>
-
-  <section>
-    <h2>Философия</h2>
-    <ul>
-      <li>Простые ингредиенты — максимум вкуса</li>
-      <li>Традиции тосканской и средиземноморской кухни</li>
-      <li>Слияние итальянской изысканности, азиатской пикантности и русской щедрости</li>
-      <li>Тонкое сочетание блюд и вин</li>
-      <li>Высокое качество мясных, рыбных и овощных блюд</li>
-    </ul>
-  </section>
-
-  <section class="portfolio">
-    <h2>Портфолио</h2>
-    <div class="portfolio-item">
-      <img src="https://via.placeholder.com/300x200/333333/ffffff?text=Салат+из+томатов" alt="Салат из томатов">
-      <div class="portfolio-item-content">
-        <p><strong>Салат из томатов</strong></p>
-        <p>Томаты, базилик, выдержанный бальзамик</p>
+  <section id="about">
+    <h2 class="section-title">Обо мне</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p>С шести лет я точно знал, что хочу стать поваром. Уже в 17 начал работать в легендарном ресторане Ц.Д.Л., где учился у австрийского шефа Юргена Ланга. Он стал моим наставником и научил меня тонкостям соусов и высокой кухни.</p>
+        <p>За более чем 15 лет я прошёл путь от классической французской школы до современной тосканской кухни. Стажировки у Умберто Кавина и Массимо Маммано помогли мне прочувствовать суть итальянской гастрономии — простота, вкус и идеальное сочетание с вином.</p>
+        <p>Сегодня, возглавляя кухню ресторана "18.12", я создаю меню, где традиционные рецепты встречаются с современными техниками приготовления. Мы делаем упор на отечественные фермерские продукты, пересматривая блюда с учетом наличия качественных локальных ингредиентов.</p>
       </div>
-    </div>
-    <div class="portfolio-item">
-      <img src="https://via.placeholder.com/300x200/333333/ffffff?text=Ягнёнок+с+баклажаном" alt="Ягнёнок с баклажаном">
-      <div class="portfolio-item-content">
-        <p><strong>Ягнёнок с баклажаном</strong></p>
-        <p>Жареный ягнёнок, копчёное пюре из баклажана, соус розмарин</p>
-      </div>
-    </div>
-    <div class="portfolio-item">
-      <img src="https://via.placeholder.com/300x200/333333/ffffff?text=Террин+из+свёклы" alt="Террин из свёклы">
-      <div class="portfolio-item-content">
-        <p><strong>Террин из свёклы</strong></p>
-        <p>Слоёная свёкла, козий сыр, грецкий орех</p>
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Шеф-повар Евгений Малин">
       </div>
     </div>
   </section>
 
-  <section class="expertise">
-    <h2>Навыки</h2>
-    <ul>
-      <li>Ферментация</li>
-      <li>Рыба и морепродукты</li>
-      <li>Овощные блюда</li>
-      <li>Разработка меню</li>
-      <li>Управление кухней</li>
-      <li>Техники Sous-vide</li>
-      <li>Контроль качества</li>
-      <li>Создание десертов</li>
-    </ul>
-  </section>
-
-  <section class="testimonials">
-    <h2>Отзывы</h2>
-    <div class="testimonial-slider">
-      <div class="testimonial-slide active">
-        <blockquote>
-          «Евгений работает с исключительной скоростью и точностью. Его страсть к делу чувствуется в каждом блюде.»
-          <footer>— Михаэль Андерссон, шеф ресторана Nordic</footer>
-        </blockquote>
+  <section class="philosophy" id="philosophy">
+    <h2 class="section-title">Моя философия</h2>
+    <div class="philosophy-grid">
+      <div class="philosophy-card">
+        <i class="fas fa-seedling"></i>
+        <h3>Качественные продукты</h3>
+        <p>Использую только сезонные продукты от проверенных локальных поставщиков. Исключаю усилители вкуса и красители.</p>
       </div>
-      <div class="testimonial-slide">
-        <blockquote>
-          «Профессионал, который умеет слушать продукт и подчёркивать его вкус. С Евгением легко работать в команде.»
-          <footer>— Анна Смирнова, ресторан "Terra"</footer>
-        </blockquote>
+      
+      <div class="philosophy-card">
+        <i class="fas fa-hand-holding-heart"></i>
+        <h3>Традиции и инновации</h3>
+        <p>Беру за основу традиционные рецепты и добавляю авторские штрихи, находя баланс между традицией и новаторством.</p>
       </div>
-      <div class="testimonial-slide">
-        <blockquote>
-          «Его подача — это искусство, а вкус — чистая эмоция. Настоящий артист гастрономии.»
-          <footer>— Алексей Громов, гастрокритик</footer>
-        </blockquote>
+      
+      <div class="philosophy-card">
+        <i class="fas fa-wine-bottle"></i>
+        <h3>Гармония с вином</h3>
+        <p>Каждое блюдо создаю с мыслью о его идеальном сочетании с вином. Гастрономия — это искусство баланса.</p>
       </div>
-    </div>
-    <div class="testimonial-nav">
-      <button data-index="0" class="active"></button>
-      <button data-index="1"></button>
-      <button data-index="2"></button>
     </div>
   </section>
 
-  <footer>
-    <div>Евгений Малин — Шеф-повар высокой кухни</div>
-    <div class="contact-info">
-      <a href="mailto:evgeny.malin@email.com">evgeny.malin@email.com</a>
-      <a href="https://instagram.com/chefevgenymalin" target="_blank">Instagram: @chefevgenymalin</a>
-      <a href="tel:+79991234567">+7 (999) 123-45-67</a>
+  <section id="philosophy-deep">
+    <div class="kitchen-philosophy">
+      <div class="kitchen-philosophy-content">
+        <div class="philosophy-quote">
+          "Главный тренд современной гастрономии — уход в сторону простых и натуральных вкусов. Успех меню зависит от правильного соотношения традиций и новаторства."
+        </div>
+        
+        <div class="philosophy-points">
+          <div class="philosophy-point">
+            <h3><i class="fas fa-lightbulb"></i> Творческий процесс</h3>
+            <p>"Создание нового блюда — это всегда творчество и эксперимент. Идеи рождаются из всего: кулинарных книг, посещения ресторанов, экспериментов с ингредиентами."</p>
+          </div>
+          
+          <div class="philosophy-point">
+            <h3><i class="fas fa-users"></i> Управление командой</h3>
+            <p>"Я счастлив, когда вся команда работает слажено, повара показывают профессионализм, а гости остаются довольны. Работа шеф-повара — это сочетание творчества и управления."</p>
+          </div>
+          
+          <div class="philosophy-point">
+            <h3><i class="fas fa-apple-alt"></i> Отношение к продуктам</h3>
+            <p>"Стараюсь использовать меньше сахара. Выбираю продукты высокого качества у надежных поставщиков. Хорошие поставщики — основа основ, ведь качество блюда зависит от исходных ингредиентов."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <h2 class="section-title">Портфолио</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Салат из томатов">
+        <div class="portfolio-overlay">
+          <h3>Салат из томатов</h3>
+          <p>Томаты, базилик, выдержанный бальзамик</p>
+        </div>
+      </div>
+      
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1606755962773-d324e7a7a7b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ягнёнок с баклажаном">
+        <div class="portfolio-overlay">
+          <h3>Ягнёнок с баклажаном</h3>
+          <p>Жареный ягнёнок, копчёное пюре из баклажана, соус розмарин</p>
+        </div>
+      </div>
+      
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Террин из свёклы">
+        <div class="portfolio-overlay">
+          <h3>Террин из свёклы</h3>
+          <p>Слоёная свёкла, козий сыр, грецкий орех</p>
+        </div>
+      </div>
+      
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Трюфельные равиоли">
+        <div class="portfolio-overlay">
+          <h3>Трюфельные равиоли</h3>
+          <p>Домашние равиоли с трюфельной начинкой, пармезан, трюфельное масло</p>
+        </div>
+      </div>
+      
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Утиная грудка">
+        <div class="portfolio-overlay">
+          <h3>Утиная грудка</h3>
+          <p>Конфи из утиной грудки, ягодный гастроном, пюре из сельдерея</p>
+        </div>
+      </div>
+      
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Фирменный борщ">
+        <div class="portfolio-overlay">
+          <h3>Борщ по-малиновски</h3>
+          <p>Свекла с лимонным соком вместо уксуса, корень сельдерея, говяжья вырезка на углях</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="expertise">
+    <h2 class="section-title">Профессиональные навыки</h2>
+    <div class="expertise-container">
+      <div class="skills-chart">
+        <div class="skill-bar">
+          <div class="skill-info">
+            <span>Итальянская кухня</span>
+            <span>95%</span>
+          </div>
+          <div class="skill-progress">
+            <span style="width: 95%"></span>
+          </div>
+        </div>
+        
+        <div class="skill-bar">
+          <div class="skill-info">
+            <span>Французские техники</span>
+            <span>90%</span>
+          </div>
+          <div class="skill-progress">
+            <span style="width: 90%"></span>
+          </div>
+        </div>
+        
+        <div class="skill-bar">
+          <div class="skill-info">
+            <span>Работа с морепродуктами</span>
+            <span>85%</span>
+          </div>
+          <div class="skill-progress">
+            <span style="width: 85%"></span>
+          </div>
+        </div>
+        
+        <div class="skill-bar">
+          <div class="skill-info">
+            <span>Ферментация</span>
+            <span>80%</span>
+          </div>
+          <div class="skill-progress">
+            <span style="width: 80%"></span>
+          </div>
+        </div>
+        
+        <div class="skill-bar">
+          <div class="skill-info">
+            <span>Управление командой</span>
+            <span>92%</span>
+          </div>
+          <div class="skill-progress">
+            <span style="width: 92%"></span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="skills-list">
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 30px; color: var(--dark);">Экспертиза</h3>
+        <ul>
+          <li>Разработка сезонного меню с учетом локальных продуктов</li>
+          <li>Управление кухней до 15 человек</li>
+          <li>Техники Sous-vide и низкотемпературного приготовления</li>
+          <li>Создание фирменных соусов (обучен Юргеном Лангом)</li>
+          <li>Работа с ферментированными продуктами</li>
+          <li>Поиск и работа с надежными поставщиками</li>
+          <li>Планирование и проведение гастроужинов</li>
+          <li>Контроль качества и безопасности</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <h2 class="section-title" style="color: white;">Контакты</h2>
+    
+    <div class="contact-grid">
+      <div class="contact-card">
+        <i class="fas fa-envelope"></i>
+        <h3>Email</h3>
+        <a href="mailto:evgeny.malin@email.com" class="social-badge">
+          <i class="fas fa-envelope"></i> evgeny.malin@email.com
+        </a>
+      </div>
+      
+      <div class="contact-card">
+        <i class="fab fa-telegram"></i>
+        <h3>Telegram</h3>
+        <a href="https://t.me/chef_evgeny_malin" target="_blank" class="social-badge">
+          <i class="fab fa-telegram"></i> @chef_evgeny_malin
+        </a>
+      </div>
+      
+      <div class="contact-card">
+        <i class="fab fa-whatsapp"></i>
+        <h3>WhatsApp</h3>
+        <a href="https://wa.me/79991234567" target="_blank" class="social-badge">
+          <i class="fab fa-whatsapp"></i> +7 (999) 123-45-67
+        </a>
+      </div>
     </div>
   </footer>
 
   <script>
+    // Анимация при прокрутке
     document.addEventListener('DOMContentLoaded', function() {
-      const slides = document.querySelectorAll('.testimonial-slide');
-      const buttons = document.querySelectorAll('.testimonial-nav button');
-      let currentSlide = 0;
-      let slideInterval;
-
-      // Функция показа слайда
-      function showSlide(index) {
-        slides.forEach(slide => slide.classList.remove('active'));
-        buttons.forEach(button => button.classList.remove('active'));
-        
-        slides[index].classList.add('active');
-        buttons[index].classList.add('active');
-        currentSlide = index;
-      }
-
-      // Автоматическая смена слайдов
-      function startSlider() {
-        slideInterval = setInterval(() => {
-          let nextSlide = (currentSlide + 1) % slides.length;
-          showSlide(nextSlide);
-        }, 5000);
-      }
-
-      // Обработчики для кнопок
-      buttons.forEach(button => {
-        button.addEventListener('click', function() {
-          clearInterval(slideInterval);
-          showSlide(parseInt(this.getAttribute('data-index')));
-          startSlider();
-        });
+      const animatedItems = document.querySelectorAll(
+        '.portfolio-item, .philosophy-card, .contact-card, .about-image, .expertise-container, .philosophy-point, .kitchen-philosophy'
+      );
+      
+      // Инициализация анимации
+      animatedItems.forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(20px)';
+        item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
       });
-
-      // Инициализация слайдера
-      showSlide(0);
-      startSlider();
+      
+      // Функция для проверки видимости элементов
+      function animateOnScroll() {
+        animatedItems.forEach(item => {
+          const rect = item.getBoundingClientRect();
+          const isVisible = rect.top < window.innerHeight * 0.9 && rect.bottom >= 0;
+          
+          if (isVisible) {
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
+          }
+        });
+      }
+      
+      // Запускаем при загрузке и при скролле
+      animateOnScroll();
+      window.addEventListener('scroll', animateOnScroll);
     });
   </script>
 </body>
