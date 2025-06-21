@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Евгений Малин — Портфолио Шеф-Повара</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
+
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: #1a1a1a;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      position: relative;
+    }
+    header::before {
+      content: "";
+      background: url('https://via.placeholder.com/1200x600') center/cover no-repeat;
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      opacity: 0.25;
+      z-index: 0;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+      font-family: 'Playfair Display', serif;
+      position: relative;
+      z-index: 1;
+    }
+    header p {
+      font-size: 1.4rem;
+      position: relative;
+      z-index: 1;
+      margin-top: 10px;
+    }
+    header .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 24px;
+      background: white;
+      color: #1a1a1a;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+      position: relative;
+      z-index: 1;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .portfolio, .testimonials {
+      display: grid;
+      gap: 20px;
+    }
+    .portfolio {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .portfolio-item img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .portfolio-item p {
+      margin: 5px 0;
+    }
+    .expertise ul {
+      columns: 2;
+    }
+    .testimonial-slider {
+      position: relative;
+      overflow: hidden;
+    }
+    .testimonial-slide {
+      display: none;
+      text-align: center;
+    }
+    .testimonial-slide.active {
+      display: block;
+    }
+    .testimonial-nav {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .testimonial-nav button {
+      background: #ccc;
+      border: none;
+      border-radius: 50%;
+      width: 10px;
+      height: 10px;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+    .testimonial-nav button.active {
+      background: #333;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #f8f8f8;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Евгений Малин</h1>
+    <blockquote style="font-style: italic; font-size: 1.3rem; margin: 20px auto; max-width: 700px; font-family: 'Playfair Display', serif;">
+        Шеф-повар высокой кухни — Октябрь Event Hall
+    </blockquote>
+    <a href="#" class="btn">Скачать резюме</a>
+  </header>
+
+  <section>
+    <h2>Обо мне</h2>
+    <p>С шести лет я точно знал, что хочу стать поваром. Уже в 17 начал работать в легендарном ресторане Ц.Д.Л., где учился у австрийского шефа Юргена Ланга. Он стал моим наставником и научил меня тонкостям соусов и высокой кухни.</p>
+    <p>За более чем 15 лет я прошёл путь от классической французской школы до современной тосканской кухни. Стажировки у Умберто Кавина и Массимо Маммано помогли мне прочувствовать суть итальянской гастрономии — простота, вкус и идеальное сочетание с вином.</p>
+  </section>
+
+  <section>
+    <h2>Философия</h2>
+    <ul>
+      <li>Простые ингредиенты — максимум вкуса</li>
+      <li>Традиции тосканской и средиземноморской кухни</li>
+      <li>Слияние итальянской изысканности, азиатской пикантности и русской щедрости</li>
+      <li>Тонкое сочетание блюд и вин</li>
+      <li>Высокое качество мясных, рыбных и овощных блюд</li>
+    </ul>
+  </section>
+
+  <section class="portfolio">
+    <h2>Портфолио</h2>
+    <div class="portfolio-item">
+      <img src="https://via.placeholder.com/300x200" alt="Салат из томатов">
+      <p><strong>Салат из томатов</strong></p>
+      <p>Томаты, базилик, выдержанный бальзамик</p>
+    </div>
+    <div class="portfolio-item">
+      <img src="https://via.placeholder.com/300x200" alt="Ягнёнок с баклажаном">
+      <p><strong>Ягнёнок с баклажаном</strong></p>
+      <p>Жареный ягнёнок, копчёное пюре из баклажана, соус розмарин</p>
+    </div>
+    <div class="portfolio-item">
+      <img src="https://via.placeholder.com/300x200" alt="Террин из свёклы">
+      <p><strong>Террин из свёклы</strong></p>
+      <p>Слоёная свёкла, козий сыр, грецкий орех</p>
+    </div>
+  </section>
+
+  <section class="expertise">
+    <h2>Навыки</h2>
+    <ul>
+      <li>Ферментация</li>
+      <li>Рыба и морепродукты</li>
+      <li>Овощные блюда</li>
+      <li>Разработка меню</li>
+      <li>Управление кухней</li>
+    </ul>
+  </section>
+
+  <section class="testimonials">
+    <h2>Отзывы</h2>
+    <div class="testimonial-slider">
+      <div class="testimonial-slide active">
+        <blockquote>
+          «Иван работает с исключительной скоростью и точностью. Его страсть к делу чувствуется в каждом блюде.»
+          <footer>— Михаэль Андерссон, шеф ресторана Nordic</footer>
+        </blockquote>
+      </div>
+      <div class="testimonial-slide">
+        <blockquote>
+          «Профессионал, который умеет слушать продукт и подчёркивать его вкус. С Иваном легко работать в команде.»
+          <footer>— Анна Смирнова, ресторан "Terra"</footer>
+        </blockquote>
+      </div>
+      <div class="testimonial-slide">
+        <blockquote>
+          «Его подача — это искусство, а вкус — чистая эмоция. Настоящий артист гастрономии.»
+          <footer>— Алексей Громов, гастрокритик</footer>
+        </blockquote>
+      </div>
+    </div>
+    <div class="testimonial-nav">
+      <button onclick="showTestimonial(0)" class="active"></button>
+      <button onclick="showTestimonial(1)"></button>
+      <button onclick="showTestimonial(2)"></button>
+    </div>
+  </section>
+
+  <footer>
+    Контакты: ivan.petrov@email.com · Instagram: @chefivanpetrov
+  </footer>
+
+  <script>
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const buttons = document.querySelectorAll('.testimonial-nav button');
+
+    function showTestimonial(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+        buttons[i].classList.toggle('active', i === index);
+      });
+    }
+  </script>
+</body>
+</html>
