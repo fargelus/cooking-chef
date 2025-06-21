@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Портфолио шеф-повара Евгения Малина">
-  <title>Евгений Малин — Шеф-повар высокой кухни</title>
+  <title>Евгений Малин — Шеф-повар</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Raleway:wght@300;400;500;600&display=swap');
@@ -180,6 +180,8 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
+      max-width: 800px;
+      margin: 0 auto;
     }
     
     .philosophy-card {
@@ -448,12 +450,11 @@
     
     .skills-list li:nth-child(1):before { content: "\f0c5"; } /* menu */
     .skills-list li:nth-child(2):before { content: "\f0c0"; } /* users */
-    .skills-list li:nth-child(3):before { content: "\f542"; } /* thermometer */
+    .skills-list li:nth-child(3):before { content: "\f810"; } /* fermentation */
     .skills-list li:nth-child(4):before { content: "\f1b2"; } /* sauce */
-    .skills-list li:nth-child(5):before { content: "\f810"; } /* fermentation */
-    .skills-list li:nth-child(6):before { content: "\f4ce"; } /* suppliers */
-    .skills-list li:nth-child(7):before { content: "\f2e7"; } /* dinner */
-    .skills-list li:nth-child(8):before { content: "\f46d"; } /* quality */
+    .skills-list li:nth-child(5):before { content: "\f4ce"; } /* suppliers */
+    .skills-list li:nth-child(6):before { content: "\f2e7"; } /* dinner */
+    .skills-list li:nth-child(7):before { content: "\f46d"; } /* quality */
     
     .publications {
       background: var(--light);
@@ -713,9 +714,9 @@
   <header>
     <div class="header-content">
       <h1>Евгений Малин</h1>
-      <h2>Шеф-повар высокой кухни</h2>
+      <h2>Шеф-повар</h2>
       <p style="max-width: 700px; margin: 0 auto 30px; font-size: 1.2rem;">Создаю гастрономические впечатления, где каждая деталь — от выбора ингредиентов до подачи — имеет значение</p>
-      <a href="#" class="btn">Скачать резюме <i class="fas fa-download"></i></a>
+      <a href="https://example.com/resume.pdf" class="btn">Мое резюме <i class="fas fa-file-alt"></i></a>
     </div>
   </header>
 
@@ -723,12 +724,12 @@
     <h2 class="section-title">Обо мне</h2>
     <div class="about-content">
       <div class="about-text">
-        <p>С шести лет я точно знал, что хочу стать поваром. Уже в 17 начал работать в легендарном ресторане Ц.Д.Л., где учился у австрийского шефа Юргена Ланга. Он стал моим наставником и научил меня тонкостям соусов и высокой кухни.</p>
-        <p>За более чем 15 лет я прошёл путь от классической французской школы до современной тосканской кухни. Стажировки у Умберто Кавина и Массимо Маммано помогли мне прочувствовать суть итальянской гастрономии — простота, вкус и идеальное сочетание с вином.</p>
+        <p>С шести лет я точно знал, что хочу стать поваром. Уже в 17 начал работать в легендарном ресторане Ц.Д.Л., где учился у австрийского шефа Юргена Ланга. Он стал моим наставником и научил меня тонкостям соусов и кулинарному мастерству.</p>
+        <p>За более чем 15 лет я прошёл путь от классической европейской кухни до современной тосканской. Стажировки у Умберто Кавина и Массимо Маммано помогли мне прочувствовать суть итальянской гастрономии — простота, вкус и качество ингредиентов.</p>
         <p>Сегодня я создаю меню, где традиционные рецепты встречаются с современными техниками приготовления, с упором на отечественные фермерские продукты и качественные локальные ингредиенты.</p>
       </div>
       <div class="about-image">
-        <img src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Шеф-повар Евгений Малин">
+        <img src="images/about_image.jpg" alt="Шеф-повар Евгений Малин">
       </div>
     </div>
   </section>
@@ -747,29 +748,23 @@
         <h3>Традиции и инновации</h3>
         <p>Беру за основу традиционные рецепты и добавляю авторские штрихи, находя баланс между традицией и новаторством.</p>
       </div>
-      
-      <div class="philosophy-card">
-        <i class="fas fa-wine-bottle"></i>
-        <h3>Гармония с вином</h3>
-        <p>Каждое блюдо создаю с мыслью о его идеальном сочетании с вином. Гастрономия — это искусство баланса.</p>
-      </div>
     </div>
   </section>
 
   <section class="trends-section">
     <div class="trends-content">
-      <h2>Главные тренды современной гастрономии</h2>
+      <h2>Современные подходы в гастрономии</h2>
       <div class="trends-grid">
         <div class="trend-card">
           <i class="fas fa-leaf"></i>
           <h3>Натуральные вкусы</h3>
-          <p>Уход в сторону простых и натуральных вкусов, где главное - качество ингредиентов, а не сложные обработки.</p>
+          <p>Фокус на простых и натуральных вкусах, где главное - качество ингредиентов, а не сложные обработки.</p>
         </div>
         
         <div class="trend-card">
           <i class="fas fa-tractor"></i>
           <h3>Локальные продукты</h3>
-          <p>Фокус на местных фермерских продуктах и сезонных ингредиентах с минимальной логистикой.</p>
+          <p>Использование местных фермерских продуктов и сезонных ингредиентов с минимальной логистикой.</p>
         </div>
         
         <div class="trend-card">
@@ -861,16 +856,6 @@
         
         <div class="skill-bar">
           <div class="skill-info">
-            <span>Французские техники</span>
-            <span>90%</span>
-          </div>
-          <div class="skill-progress">
-            <span style="width: 90%"></span>
-          </div>
-        </div>
-        
-        <div class="skill-bar">
-          <div class="skill-info">
             <span>Работа с морепродуктами</span>
             <span>85%</span>
           </div>
@@ -898,6 +883,16 @@
             <span style="width: 92%"></span>
           </div>
         </div>
+        
+        <div class="skill-bar">
+          <div class="skill-info">
+            <span>Авторские рецепты</span>
+            <span>90%</span>
+          </div>
+          <div class="skill-progress">
+            <span style="width: 90%"></span>
+          </div>
+        </div>
       </div>
       
       <div class="skills-list">
@@ -905,9 +900,8 @@
         <ul>
           <li>Разработка сезонного меню с учетом локальных продуктов</li>
           <li>Управление кухней до 15 человек</li>
-          <li>Техники Sous-vide и низкотемпературного приготовления</li>
-          <li>Создание фирменных соусов (обучен Юргеном Лангом)</li>
           <li>Работа с ферментированными продуктами</li>
+          <li>Создание фирменных соусов (обучен Юргеном Лангом)</li>
           <li>Поиск и работа с надежными поставщиками</li>
           <li>Планирование и проведение гастроужинов</li>
           <li>Контроль качества и безопасности</li>
