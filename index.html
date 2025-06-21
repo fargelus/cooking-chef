@@ -21,6 +21,11 @@
       padding: 60px 20px;
       text-align: center;
       position: relative;
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
     header::before {
       content: "";
@@ -55,6 +60,12 @@
       font-weight: bold;
       position: relative;
       z-index: 1;
+      transition: all 0.3s ease;
+    }
+    header .btn:hover {
+      background: #e0e0e0;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
     section {
       padding: 40px 20px;
@@ -64,56 +75,128 @@
     h2 {
       font-size: 2rem;
       margin-bottom: 20px;
+      font-family: 'Playfair Display', serif;
+      color: #1a1a1a;
+      position: relative;
+    }
+    h2::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 80px;
+      height: 3px;
+      background: #c39d63;
     }
     .portfolio, .testimonials {
       display: grid;
       gap: 20px;
     }
     .portfolio {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .portfolio-item {
+      background: #f9f9f9;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .portfolio-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     }
     .portfolio-item img {
       width: 100%;
-      border-radius: 8px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px 8px 0 0;
+    }
+    .portfolio-item-content {
+      padding: 15px;
     }
     .portfolio-item p {
       margin: 5px 0;
     }
     .expertise ul {
       columns: 2;
+      list-style-type: none;
+      padding: 0;
+    }
+    .expertise li {
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 10px;
+    }
+    .expertise li::before {
+      content: "★";
+      position: absolute;
+      left: 0;
+      color: #c39d63;
     }
     .testimonial-slider {
       position: relative;
       overflow: hidden;
+      background: #f8f8f8;
+      padding: 30px;
+      border-radius: 8px;
+      min-height: 180px;
     }
     .testimonial-slide {
       display: none;
       text-align: center;
+      animation: fadeIn 1s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
     .testimonial-slide.active {
       display: block;
     }
     .testimonial-nav {
       text-align: center;
-      margin-top: 10px;
+      margin-top: 20px;
     }
     .testimonial-nav button {
       background: #ccc;
       border: none;
       border-radius: 50%;
-      width: 10px;
-      height: 10px;
-      margin: 0 5px;
+      width: 12px;
+      height: 12px;
+      margin: 0 8px;
       cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .testimonial-nav button:hover {
+      background: #999;
     }
     .testimonial-nav button.active {
-      background: #333;
+      background: #c39d63;
+      transform: scale(1.2);
     }
     footer {
       text-align: center;
-      padding: 20px;
-      background: #f8f8f8;
-      font-size: 0.9rem;
+      padding: 30px;
+      background: #1a1a1a;
+      color: white;
+      font-size: 1rem;
+    }
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+    .contact-info a {
+      color: #c39d63;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .contact-info a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -146,19 +229,25 @@
   <section class="portfolio">
     <h2>Портфолио</h2>
     <div class="portfolio-item">
-      <img src="https://via.placeholder.com/300x200" alt="Салат из томатов">
-      <p><strong>Салат из томатов</strong></p>
-      <p>Томаты, базилик, выдержанный бальзамик</p>
+      <img src="https://via.placeholder.com/300x200/333333/ffffff?text=Салат+из+томатов" alt="Салат из томатов">
+      <div class="portfolio-item-content">
+        <p><strong>Салат из томатов</strong></p>
+        <p>Томаты, базилик, выдержанный бальзамик</p>
+      </div>
     </div>
     <div class="portfolio-item">
-      <img src="https://via.placeholder.com/300x200" alt="Ягнёнок с баклажаном">
-      <p><strong>Ягнёнок с баклажаном</strong></p>
-      <p>Жареный ягнёнок, копчёное пюре из баклажана, соус розмарин</p>
+      <img src="https://via.placeholder.com/300x200/333333/ffffff?text=Ягнёнок+с+баклажаном" alt="Ягнёнок с баклажаном">
+      <div class="portfolio-item-content">
+        <p><strong>Ягнёнок с баклажаном</strong></p>
+        <p>Жареный ягнёнок, копчёное пюре из баклажана, соус розмарин</p>
+      </div>
     </div>
     <div class="portfolio-item">
-      <img src="https://via.placeholder.com/300x200" alt="Террин из свёклы">
-      <p><strong>Террин из свёклы</strong></p>
-      <p>Слоёная свёкла, козий сыр, грецкий орех</p>
+      <img src="https://via.placeholder.com/300x200/333333/ffffff?text=Террин+из+свёклы" alt="Террин из свёклы">
+      <div class="portfolio-item-content">
+        <p><strong>Террин из свёклы</strong></p>
+        <p>Слоёная свёкла, козий сыр, грецкий орех</p>
+      </div>
     </div>
   </section>
 
@@ -170,6 +259,9 @@
       <li>Овощные блюда</li>
       <li>Разработка меню</li>
       <li>Управление кухней</li>
+      <li>Техники Sous-vide</li>
+      <li>Контроль качества</li>
+      <li>Создание десертов</li>
     </ul>
   </section>
 
@@ -178,13 +270,13 @@
     <div class="testimonial-slider">
       <div class="testimonial-slide active">
         <blockquote>
-          «Иван работает с исключительной скоростью и точностью. Его страсть к делу чувствуется в каждом блюде.»
+          «Евгений работает с исключительной скоростью и точностью. Его страсть к делу чувствуется в каждом блюде.»
           <footer>— Михаэль Андерссон, шеф ресторана Nordic</footer>
         </blockquote>
       </div>
       <div class="testimonial-slide">
         <blockquote>
-          «Профессионал, который умеет слушать продукт и подчёркивать его вкус. С Иваном легко работать в команде.»
+          «Профессионал, который умеет слушать продукт и подчёркивать его вкус. С Евгением легко работать в команде.»
           <footer>— Анна Смирнова, ресторан "Terra"</footer>
         </blockquote>
       </div>
@@ -196,26 +288,59 @@
       </div>
     </div>
     <div class="testimonial-nav">
-      <button onclick="showTestimonial(0)" class="active"></button>
-      <button onclick="showTestimonial(1)"></button>
-      <button onclick="showTestimonial(2)"></button>
+      <button data-index="0" class="active"></button>
+      <button data-index="1"></button>
+      <button data-index="2"></button>
     </div>
   </section>
 
   <footer>
-    Контакты: ivan.petrov@email.com · Instagram: @chefivanpetrov
+    <div>Евгений Малин — Шеф-повар высокой кухни</div>
+    <div class="contact-info">
+      <a href="mailto:evgeny.malin@email.com">evgeny.malin@email.com</a>
+      <a href="https://instagram.com/chefevgenymalin" target="_blank">Instagram: @chefevgenymalin</a>
+      <a href="tel:+79991234567">+7 (999) 123-45-67</a>
+    </div>
   </footer>
 
   <script>
-    const slides = document.querySelectorAll('.testimonial-slide');
-    const buttons = document.querySelectorAll('.testimonial-nav button');
+    document.addEventListener('DOMContentLoaded', function() {
+      const slides = document.querySelectorAll('.testimonial-slide');
+      const buttons = document.querySelectorAll('.testimonial-nav button');
+      let currentSlide = 0;
+      let slideInterval;
 
-    function showTestimonial(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-        buttons[i].classList.toggle('active', i === index);
+      // Функция показа слайда
+      function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        buttons.forEach(button => button.classList.remove('active'));
+        
+        slides[index].classList.add('active');
+        buttons[index].classList.add('active');
+        currentSlide = index;
+      }
+
+      // Автоматическая смена слайдов
+      function startSlider() {
+        slideInterval = setInterval(() => {
+          let nextSlide = (currentSlide + 1) % slides.length;
+          showSlide(nextSlide);
+        }, 5000);
+      }
+
+      // Обработчики для кнопок
+      buttons.forEach(button => {
+        button.addEventListener('click', function() {
+          clearInterval(slideInterval);
+          showSlide(parseInt(this.getAttribute('data-index')));
+          startSlider();
+        });
       });
-    }
+
+      // Инициализация слайдера
+      showSlide(0);
+      startSlider();
+    });
   </script>
 </body>
 </html>
