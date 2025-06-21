@@ -208,90 +208,107 @@
       font-family: 'Playfair Display', serif;
     }
     
-    .kitchen-philosophy {
+    .trends-section {
       background: linear-gradient(rgba(0,0,0,0.03), rgba(0,0,0,0.03)), url('https://images.unsplash.com/photo-1514995669114-6081e934b693?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
-      padding: 80px 40px;
-      border-radius: 15px;
-      margin: 60px 0;
+      padding: 100px 40px;
       position: relative;
+      text-align: center;
     }
     
-    .kitchen-philosophy::before {
+    .trends-section::before {
       content: "";
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(255,255,255,0.85);
-      border-radius: 15px;
+      background: rgba(255,255,255,0.9);
       z-index: 0;
     }
     
-    .kitchen-philosophy-content {
+    .trends-content {
       position: relative;
       z-index: 1;
-      max-width: 900px;
+      max-width: 1200px;
       margin: 0 auto;
     }
     
-    .philosophy-quote {
+    .trends-content h2 {
+      font-size: 2.8rem;
+      margin-bottom: 60px;
       font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      line-height: 1.6;
       color: var(--dark);
       text-align: center;
-      margin-bottom: 40px;
-      font-style: italic;
       position: relative;
     }
     
-    .philosophy-quote::before,
-    .philosophy-quote::after {
-      content: """;
-      font-size: 5rem;
-      color: var(--gold);
+    .trends-content h2:after {
+      content: "";
       position: absolute;
-      opacity: 0.3;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: var(--gold);
     }
     
-    .philosophy-quote::before {
-      top: -30px;
-      left: -40px;
-    }
-    
-    .philosophy-quote::after {
-      bottom: -60px;
-      right: -40px;
-      transform: rotate(180deg);
-    }
-    
-    .philosophy-points {
+    .trends-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
       margin-top: 50px;
     }
     
-    .philosophy-point {
+    .trend-card {
       background: white;
-      padding: 30px;
+      padding: 40px 30px;
       border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      border-left: 4px solid var(--gold);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      text-align: center;
+      transition: all 0.4s ease;
     }
     
-    .philosophy-point h3 {
-      color: var(--dark);
-      font-size: 1.4rem;
-      margin-bottom: 15px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    .trend-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
     }
     
-    .philosophy-point h3 i {
+    .trend-card i {
+      font-size: 3.5rem;
       color: var(--gold);
+      margin-bottom: 20px;
+    }
+    
+    .trend-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .portfolio-tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+    
+    .tab-btn {
+      padding: 12px 30px;
+      background: white;
+      border: 2px solid var(--gold);
+      border-radius: 50px;
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .tab-btn:hover, .tab-btn.active {
+      background: var(--gold);
+      color: white;
     }
     
     .portfolio-grid {
@@ -307,6 +324,11 @@
       box-shadow: 0 15px 30px rgba(0,0,0,0.1);
       height: 350px;
       transition: all 0.5s ease;
+      display: none;
+    }
+    
+    .portfolio-item.active {
+      display: block;
     }
     
     .portfolio-item:hover {
@@ -399,17 +421,122 @@
     
     .skills-list li {
       position: relative;
-      padding-left: 30px;
-      margin-bottom: 20px;
+      padding-left: 50px;
+      margin-bottom: 25px;
       font-size: 1.1rem;
+      min-height: 40px;
+      display: flex;
+      align-items: center;
     }
     
     .skills-list li:before {
-      content: "•";
+      content: "";
       position: absolute;
       left: 0;
-      color: var(--gold);
-      font-size: 1.5rem;
+      width: 40px;
+      height: 40px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      font-size: 1.2rem;
+    }
+    
+    .skills-list li:nth-child(1):before { content: "\f0c5"; } /* menu */
+    .skills-list li:nth-child(2):before { content: "\f0c0"; } /* users */
+    .skills-list li:nth-child(3):before { content: "\f542"; } /* thermometer */
+    .skills-list li:nth-child(4):before { content: "\f1b2"; } /* sauce */
+    .skills-list li:nth-child(5):before { content: "\f810"; } /* fermentation */
+    .skills-list li:nth-child(6):before { content: "\f4ce"; } /* suppliers */
+    .skills-list li:nth-child(7):before { content: "\f2e7"; } /* dinner */
+    .skills-list li:nth-child(8):before { content: "\f46d"; } /* quality */
+    
+    .publications {
+      background: var(--light);
+      border-radius: 15px;
+      padding: 60px 40px;
+    }
+    
+    .publications-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .publication-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: all 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    
+    .publication-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    }
+    
+    .publication-logo {
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: #f8f8f8;
+    }
+    
+    .publication-logo.restoran {
+      background: #1a1a1a;
+    }
+    
+    .publication-logo img {
+      max-height: 70px;
+      max-width: 200px;
+    }
+    
+    .publication-content {
+      padding: 30px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .publication-content h3 {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      font-family: 'Playfair Display', serif;
+      color: var(--dark);
+    }
+    
+    .publication-content p {
+      color: var(--text-light);
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+    
+    .publication-link {
+      display: inline-block;
+      padding: 10px 20px;
+      background: var(--gold);
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+    
+    .publication-link:hover {
+      background: #a88652;
     }
     
     footer {
@@ -423,7 +550,7 @@
       display: flex;
       justify-content: center;
       gap: 40px;
-      max-width: 800px;
+      max-width: 1000px;
       margin: 0 auto;
       flex-wrap: wrap;
     }
@@ -434,6 +561,7 @@
       border-radius: 10px;
       transition: all 0.3s ease;
       min-width: 300px;
+      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -517,8 +645,20 @@
         font-size: 2.8rem;
       }
       
-      .philosophy-quote {
-        font-size: 1.5rem;
+      .trends-content h2 {
+        font-size: 2.2rem;
+      }
+      
+      .contact-grid {
+        flex-wrap: wrap;
+      }
+      
+      .contact-card {
+        flex: 0 0 calc(50% - 40px);
+      }
+      
+      .skills-list li {
+        padding-left: 45px;
       }
     }
     
@@ -539,14 +679,10 @@
         font-size: 2.2rem;
       }
       
-      .contact-grid {
-        flex-direction: column;
-        align-items: center;
-      }
-      
       .contact-card {
-        width: 100%;
+        flex: 0 0 100%;
         max-width: 400px;
+        margin: 0 auto;
       }
       
       .about-text p {
@@ -554,27 +690,21 @@
         line-height: 1.8;
       }
       
-      .philosophy-quote {
-        font-size: 1.3rem;
+      .trends-section {
+        padding: 60px 20px;
       }
       
-      .philosophy-quote::before,
-      .philosophy-quote::after {
-        font-size: 3rem;
+      .publications-grid {
+        grid-template-columns: 1fr;
       }
       
-      .philosophy-quote::before {
-        top: -15px;
-        left: -20px;
+      .portfolio-tabs {
+        gap: 8px;
       }
       
-      .philosophy-quote::after {
-        bottom: -30px;
-        right: -20px;
-      }
-      
-      .kitchen-philosophy {
-        padding: 40px 20px;
+      .tab-btn {
+        padding: 10px 20px;
+        font-size: 0.95rem;
       }
     }
   </style>
@@ -595,7 +725,7 @@
       <div class="about-text">
         <p>С шести лет я точно знал, что хочу стать поваром. Уже в 17 начал работать в легендарном ресторане Ц.Д.Л., где учился у австрийского шефа Юргена Ланга. Он стал моим наставником и научил меня тонкостям соусов и высокой кухни.</p>
         <p>За более чем 15 лет я прошёл путь от классической французской школы до современной тосканской кухни. Стажировки у Умберто Кавина и Массимо Маммано помогли мне прочувствовать суть итальянской гастрономии — простота, вкус и идеальное сочетание с вином.</p>
-        <p>Сегодня, возглавляя кухню ресторана "18.12", я создаю меню, где традиционные рецепты встречаются с современными техниками приготовления. Мы делаем упор на отечественные фермерские продукты, пересматривая блюда с учетом наличия качественных локальных ингредиентов.</p>
+        <p>Сегодня я создаю меню, где традиционные рецепты встречаются с современными техниками приготовления, с упором на отечественные фермерские продукты и качественные локальные ингредиенты.</p>
       </div>
       <div class="about-image">
         <img src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Шеф-повар Евгений Малин">
@@ -626,28 +756,26 @@
     </div>
   </section>
 
-  <section id="philosophy-deep">
-    <div class="kitchen-philosophy">
-      <div class="kitchen-philosophy-content">
-        <div class="philosophy-quote">
-          "Главный тренд современной гастрономии — уход в сторону простых и натуральных вкусов. Успех меню зависит от правильного соотношения традиций и новаторства."
+  <section class="trends-section">
+    <div class="trends-content">
+      <h2>Главные тренды современной гастрономии</h2>
+      <div class="trends-grid">
+        <div class="trend-card">
+          <i class="fas fa-leaf"></i>
+          <h3>Натуральные вкусы</h3>
+          <p>Уход в сторону простых и натуральных вкусов, где главное - качество ингредиентов, а не сложные обработки.</p>
         </div>
         
-        <div class="philosophy-points">
-          <div class="philosophy-point">
-            <h3><i class="fas fa-lightbulb"></i> Творческий процесс</h3>
-            <p>"Создание нового блюда — это всегда творчество и эксперимент. Идеи рождаются из всего: кулинарных книг, посещения ресторанов, экспериментов с ингредиентами."</p>
-          </div>
-          
-          <div class="philosophy-point">
-            <h3><i class="fas fa-users"></i> Управление командой</h3>
-            <p>"Я счастлив, когда вся команда работает слажено, повара показывают профессионализм, а гости остаются довольны. Работа шеф-повара — это сочетание творчества и управления."</p>
-          </div>
-          
-          <div class="philosophy-point">
-            <h3><i class="fas fa-apple-alt"></i> Отношение к продуктам</h3>
-            <p>"Стараюсь использовать меньше сахара. Выбираю продукты высокого качества у надежных поставщиков. Хорошие поставщики — основа основ, ведь качество блюда зависит от исходных ингредиентов."</p>
-          </div>
+        <div class="trend-card">
+          <i class="fas fa-tractor"></i>
+          <h3>Локальные продукты</h3>
+          <p>Фокус на местных фермерских продуктах и сезонных ингредиентах с минимальной логистикой.</p>
+        </div>
+        
+        <div class="trend-card">
+          <i class="fas fa-recycle"></i>
+          <h3>Устойчивое развитие</h3>
+          <p>Сокращение пищевых отходов, использование ферментации и полная переработка ингредиентов.</p>
         </div>
       </div>
     </div>
@@ -655,16 +783,17 @@
 
   <section id="portfolio">
     <h2 class="section-title">Портфолио</h2>
+    
+    <div class="portfolio-tabs">
+      <button class="tab-btn active" data-category="all">Все блюда</button>
+      <button class="tab-btn" data-category="hot">Горячее</button>
+      <button class="tab-btn" data-category="salads">Салаты</button>
+      <button class="tab-btn" data-category="soups">Супы</button>
+    </div>
+    
     <div class="portfolio-grid">
-      <div class="portfolio-item">
-        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Салат из томатов">
-        <div class="portfolio-overlay">
-          <h3>Салат из томатов</h3>
-          <p>Томаты, базилик, выдержанный бальзамик</p>
-        </div>
-      </div>
-      
-      <div class="portfolio-item">
+      <!-- Горячие блюда -->
+      <div class="portfolio-item active" data-category="hot">
         <img src="https://images.unsplash.com/photo-1606755962773-d324e7a7a7b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ягнёнок с баклажаном">
         <div class="portfolio-overlay">
           <h3>Ягнёнок с баклажаном</h3>
@@ -672,23 +801,7 @@
         </div>
       </div>
       
-      <div class="portfolio-item">
-        <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Террин из свёклы">
-        <div class="portfolio-overlay">
-          <h3>Террин из свёклы</h3>
-          <p>Слоёная свёкла, козий сыр, грецкий орех</p>
-        </div>
-      </div>
-      
-      <div class="portfolio-item">
-        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Трюфельные равиоли">
-        <div class="portfolio-overlay">
-          <h3>Трюфельные равиоли</h3>
-          <p>Домашние равиоли с трюфельной начинкой, пармезан, трюфельное масло</p>
-        </div>
-      </div>
-      
-      <div class="portfolio-item">
+      <div class="portfolio-item active" data-category="hot">
         <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Утиная грудка">
         <div class="portfolio-overlay">
           <h3>Утиная грудка</h3>
@@ -696,11 +809,37 @@
         </div>
       </div>
       
-      <div class="portfolio-item">
+      <div class="portfolio-item active" data-category="hot">
+        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Трюфельные равиоли">
+        <div class="portfolio-overlay">
+          <h3>Трюфельные равиоли</h3>
+          <p>Домашние равиоли с трюфельной начинкой, пармезан, трюфельное масло</p>
+        </div>
+      </div>
+      
+      <!-- Салаты -->
+      <div class="portfolio-item active" data-category="salads">
+        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Салат из томатов">
+        <div class="portfolio-overlay">
+          <h3>Салат из томатов</h3>
+          <p>Томаты, базилик, выдержанный бальзамик</p>
+        </div>
+      </div>
+      
+      <div class="portfolio-item active" data-category="salads">
+        <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Террин из свёклы">
+        <div class="portfolio-overlay">
+          <h3>Террин из свёклы</h3>
+          <p>Слоёная свёкла, козий сыр, грецкий орех</p>
+        </div>
+      </div>
+      
+      <!-- Супы -->
+      <div class="portfolio-item active" data-category="soups">
         <img src="https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Фирменный борщ">
         <div class="portfolio-overlay">
           <h3>Борщ по-малиновски</h3>
-          <p>Свекла с лимонным соком вместо уксуса, корень сельдерея, говяжья вырезка на углях</p>
+          <p>Свекла с лимонным соком, корень сельдерея, говяжья вырезка на углях</p>
         </div>
       </div>
     </div>
@@ -777,6 +916,33 @@
     </div>
   </section>
 
+  <section id="publications" class="publications">
+    <h2 class="section-title">Публикации</h2>
+    <div class="publications-grid">
+      <div class="publication-card">
+        <div class="publication-logo restoran">
+          <img src="https://www.restoran.ru/images/logo-restoran.svg" alt="Restoran.ru">
+        </div>
+        <div class="publication-content">
+          <h3>Евгений Малин — новый шеф-повар высокой кухни</h3>
+          <p>Интервью о философии тосканской кухни, кулинарных экспериментах и идеальном борще.</p>
+          <a href="https://www.restoran.ru/msk/news/restoransnewsmsk/evgeniy-malin--novyiy-shef-povar-oktyabr-event-hall/" class="publication-link" target="_blank">Читать статью</a>
+        </div>
+      </div>
+      
+      <div class="publication-card">
+        <div class="publication-logo restoran">
+          <img src="https://www.restoran.ru/images/logo-restoran.svg" alt="Restoran.ru">
+        </div>
+        <div class="publication-content">
+          <h3>Концепция современной кухни от Евгения Малина</h3>
+          <p>Рассказ о новых подходах в меню, предпочтениях гостей и современных трендах.</p>
+          <a href="https://restoran-ru.turbopages.org/turbo/restoran.ru/s/msk/news/restoransnewsmsk/evgeniy-malin--novyiy-shef-povar-oktyabr-event-hall/" class="publication-link" target="_blank">Читать статью</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer id="contact">
     <h2 class="section-title" style="color: white;">Контакты</h2>
     
@@ -811,7 +977,7 @@
     // Анимация при прокрутке
     document.addEventListener('DOMContentLoaded', function() {
       const animatedItems = document.querySelectorAll(
-        '.portfolio-item, .philosophy-card, .contact-card, .about-image, .expertise-container, .philosophy-point, .kitchen-philosophy'
+        '.portfolio-item, .philosophy-card, .contact-card, .about-image, .expertise-container, .trend-card, .publication-card'
       );
       
       // Инициализация анимации
@@ -837,6 +1003,34 @@
       // Запускаем при загрузке и при скролле
       animateOnScroll();
       window.addEventListener('scroll', animateOnScroll);
+      
+      // Табы для портфолио
+      const tabBtns = document.querySelectorAll('.tab-btn');
+      const portfolioItems = document.querySelectorAll('.portfolio-item');
+      
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          // Убираем активный класс со всех кнопок
+          tabBtns.forEach(b => b.classList.remove('active'));
+          
+          // Добавляем активный класс текущей кнопке
+          this.classList.add('active');
+          
+          // Получаем категорию
+          const category = this.getAttribute('data-category');
+          
+          // Показываем/скрываем элементы портфолио
+          portfolioItems.forEach(item => {
+            item.classList.remove('active');
+            
+            if (category === 'all' || item.getAttribute('data-category') === category) {
+              setTimeout(() => {
+                item.classList.add('active');
+              }, 10);
+            }
+          });
+        });
+      });
     });
   </script>
 </body>
