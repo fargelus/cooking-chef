@@ -374,53 +374,26 @@
     
     .expertise-container {
       display: flex;
-      gap: 50px;
+      justify-content: center;
       background: white;
       border-radius: 15px;
       overflow: hidden;
       box-shadow: 0 20px 50px rgba(0,0,0,0.1);
     }
-    
-    .skills-chart {
-      flex: 1;
-      padding: 50px 40px;
-      background: var(--dark);
-      color: white;
-    }
-    
+
     .skills-list {
-      flex: 1;
       padding: 50px 40px;
-    }
-    
-    .skill-bar {
-      margin-bottom: 30px;
-    }
-    
-    .skill-info {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 10px;
-    }
-    
-    .skill-progress {
-      height: 10px;
-      background: rgba(255,255,255,0.2);
-      border-radius: 5px;
-      overflow: hidden;
-    }
-    
-    .skill-progress span {
-      display: block;
-      height: 100%;
-      background: var(--gold);
-      border-radius: 5px;
+      width: 100%;
+      max-width: 800px;
+      text-align: center;
     }
     
     .skills-list ul {
       list-style-type: none;
+      display: inline-block;
+      text-align: left;
     }
-    
+
     .skills-list li {
       position: relative;
       padding-left: 50px;
@@ -453,8 +426,24 @@
     .skills-list li:nth-child(3):before { content: "\f810"; } /* fermentation */
     .skills-list li:nth-child(4):before { content: "\f1b2"; } /* sauce */
     .skills-list li:nth-child(5):before { content: "\f4ce"; } /* suppliers */
-    .skills-list li:nth-child(6):before { content: "\f2e7"; } /* dinner */
-    .skills-list li:nth-child(7):before { content: "\f46d"; } /* quality */
+
+  /* Адаптивность */
+  @media (max-width: 768px) {
+    .skills-list {
+      padding: 30px 20px;
+    }
+    
+    .skills-list li {
+      padding-left: 40px;
+      font-size: 1rem;
+    }
+    
+    .skills-list li:before {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+      }
+    }
     
     .publications {
       background: var(--light);
@@ -715,8 +704,7 @@
     <div class="header-content">
       <h1>Евгений Малин</h1>
       <h2>Шеф-повар</h2>
-      <p style="max-width: 700px; margin: 0 auto 30px; font-size: 1.2rem;">Создаю гастрономические впечатления, где каждая деталь — от выбора ингредиентов до подачи — имеет значение</p>
-      <a href="https://example.com/resume.pdf" class="btn">Мое резюме <i class="fas fa-file-alt"></i></a>
+      <p style="max-width: 700px; margin: 0 auto 30px; font-size: 1.2rem;">Детали решают всё. От ингредиентов до подачи.</p>
     </div>
   </header>
 
@@ -724,54 +712,11 @@
     <h2 class="section-title">Обо мне</h2>
     <div class="about-content">
       <div class="about-text">
-        <p>С шести лет я точно знал, что хочу стать поваром. Уже в 17 начал работать в легендарном ресторане Ц.Д.Л., где учился у австрийского шефа Юргена Ланга. Он стал моим наставником и научил меня тонкостям соусов и кулинарному мастерству.</p>
-        <p>За более чем 15 лет я прошёл путь от классической европейской кухни до современной тосканской. Стажировки у Умберто Кавина и Массимо Маммано помогли мне прочувствовать суть итальянской гастрономии — простота, вкус и качество ингредиентов.</p>
-        <p>Сегодня я создаю меню, где традиционные рецепты встречаются с современными техниками приготовления, с упором на отечественные фермерские продукты и качественные локальные ингредиенты.</p>
+        <p>Я из тех счастливцев, кто определился с будущей профессией еще в раннем детстве. С шести лет я целенаправленно шел к своей мечте. Начал свою карьеру еще в 17 лет в ресторане Ц.Д.Л. Шеф-повар ресторана Юрген Ланг, именитый австриец, специально приглашенный из Европы, в течение 5 лет стал для меня наставником, который научил меня всем тонкостям профессии, в особенности мастерству приготовления соусов.</p>
+        <p>За более чем 25 лет я прошёл путь от классической европейской кухни до современной тосканской. Стажировки у Умберто Кавина и Массимо Маммано помогли мне прочувствовать суть итальянской гастрономии — простота, вкус и качество ингредиентов.</p>
       </div>
       <div class="about-image">
         <img src="images/about_photo.jpg" alt="Шеф-повар Евгений Малин">
-      </div>
-    </div>
-  </section>
-
-  <section class="philosophy" id="philosophy">
-    <h2 class="section-title">Моя философия</h2>
-    <div class="philosophy-grid">
-      <div class="philosophy-card">
-        <i class="fas fa-seedling"></i>
-        <h3>Качественные продукты</h3>
-        <p>Использую только сезонные продукты от проверенных локальных поставщиков. Исключаю усилители вкуса и красители.</p>
-      </div>
-      
-      <div class="philosophy-card">
-        <i class="fas fa-hand-holding-heart"></i>
-        <h3>Традиции и инновации</h3>
-        <p>Беру за основу традиционные рецепты и добавляю авторские штрихи, находя баланс между традицией и новаторством.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="trends-section">
-    <div class="trends-content">
-      <h2>Современные подходы в гастрономии</h2>
-      <div class="trends-grid">
-        <div class="trend-card">
-          <i class="fas fa-leaf"></i>
-          <h3>Натуральные вкусы</h3>
-          <p>Фокус на простых и натуральных вкусах, где главное - качество ингредиентов, а не сложные обработки.</p>
-        </div>
-        
-        <div class="trend-card">
-          <i class="fas fa-tractor"></i>
-          <h3>Локальные продукты</h3>
-          <p>Использование местных фермерских продуктов и сезонных ингредиентов с минимальной логистикой.</p>
-        </div>
-        
-        <div class="trend-card">
-          <i class="fas fa-recycle"></i>
-          <h3>Устойчивое развитие</h3>
-          <p>Сокращение пищевых отходов, использование ферментации и полная переработка ингредиентов.</p>
-        </div>
       </div>
     </div>
   </section>
@@ -843,96 +788,15 @@
   <section id="expertise">
     <h2 class="section-title">Профессиональные навыки</h2>
     <div class="expertise-container">
-      <div class="skills-chart">
-        <div class="skill-bar">
-          <div class="skill-info">
-            <span>Итальянская кухня</span>
-            <span>95%</span>
-          </div>
-          <div class="skill-progress">
-            <span style="width: 95%"></span>
-          </div>
-        </div>
-        
-        <div class="skill-bar">
-          <div class="skill-info">
-            <span>Работа с морепродуктами</span>
-            <span>85%</span>
-          </div>
-          <div class="skill-progress">
-            <span style="width: 85%"></span>
-          </div>
-        </div>
-        
-        <div class="skill-bar">
-          <div class="skill-info">
-            <span>Ферментация</span>
-            <span>80%</span>
-          </div>
-          <div class="skill-progress">
-            <span style="width: 80%"></span>
-          </div>
-        </div>
-        
-        <div class="skill-bar">
-          <div class="skill-info">
-            <span>Управление командой</span>
-            <span>92%</span>
-          </div>
-          <div class="skill-progress">
-            <span style="width: 92%"></span>
-          </div>
-        </div>
-        
-        <div class="skill-bar">
-          <div class="skill-info">
-            <span>Авторские рецепты</span>
-            <span>90%</span>
-          </div>
-          <div class="skill-progress">
-            <span style="width: 90%"></span>
-          </div>
-        </div>
-      </div>
-      
       <div class="skills-list">
         <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 30px; color: var(--dark);">Экспертиза</h3>
         <ul>
           <li>Разработка сезонного меню с учетом локальных продуктов</li>
           <li>Управление кухней до 15 человек</li>
-          <li>Работа с ферментированными продуктами</li>
-          <li>Создание фирменных соусов (обучен Юргеном Лангом)</li>
           <li>Поиск и работа с надежными поставщиками</li>
           <li>Планирование и проведение гастроужинов</li>
           <li>Контроль качества и безопасности</li>
         </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="publications" class="publications">
-    <h2 class="section-title">Публикации</h2>
-    <div class="publications-grid">
-      <div class="publication-card">
-        <div class="publication-logo restoran">
-          <img src="https://www.restoran.ru/images/logo-restoran.svg" alt="Restoran.ru">
-        </div>
-        <div class="publication-content">
-          <h3>Евгений Малин — новый шеф-повар высокой кухни</h3>
-          <p>Интервью о философии тосканской кухни, кулинарных экспериментах и идеальном борще.</p>
-          <a href="https://www.restoran.ru/msk/news/restoransnewsmsk/evgeniy-malin--novyiy-shef-povar-oktyabr-event-hall/" class="publication-link" target="_blank">Читать статью</a>
-        </div>
-      </div>
-      
-      <div class="publication-card">
-        <div class="publication-logo restoran">
-          <img src="https://www.restoran.ru/images/logo-restoran.svg" alt="Restoran.ru">
-        </div>
-        <div class="publication-content">
-          <h3>Концепция современной кухни от Евгения Малина</h3>
-          <p>Рассказ о новых подходах в меню, предпочтениях гостей и современных трендах.</p>
-          <a href="https://restoran-ru.turbopages.org/turbo/restoran.ru/s/msk/news/restoransnewsmsk/evgeniy-malin--novyiy-shef-povar-oktyabr-event-hall/" class="publication-link" target="_blank">Читать статью</a>
-        </div>
       </div>
     </div>
   </section>
