@@ -11,10 +11,13 @@
 
     :root {
       --gold: #c39d63;
+      --gold-light: #d4b78c;
       --dark: #1a1a1a;
       --light: #f8f8f8;
       --text: #333;
       --text-light: #666;
+      --portfolio-bg: #f9f6f1;
+      --skills-bg: #f5f2ec;
     }
     
     * {
@@ -94,10 +97,6 @@
       box-shadow: 0 10px 20px rgba(0,0,0,0.2);
     }
     
-    .btn i {
-      margin-left: 8px;
-    }
-    
     section {
       padding: 100px 20px;
       max-width: 1200px;
@@ -172,120 +171,23 @@
       display: block;
     }
     
-    .philosophy {
-      background: var(--light);
-    }
-    
-    .philosophy-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    
-    .philosophy-card {
-      background: white;
-      padding: 40px 30px;
-      border-radius: 10px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      text-align: center;
-      transition: all 0.4s ease;
-    }
-    
-    .philosophy-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-    }
-    
-    .philosophy-card i {
-      font-size: 3.5rem;
-      color: var(--gold);
-      margin-bottom: 20px;
-    }
-    
-    .philosophy-card h3 {
-      font-size: 1.8rem;
-      margin-bottom: 20px;
-      font-family: 'Playfair Display', serif;
-    }
-    
-    .trends-section {
-      background: linear-gradient(rgba(0,0,0,0.03), rgba(0,0,0,0.03)), url('https://images.unsplash.com/photo-1514995669114-6081e934b693?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
-      padding: 100px 40px;
+    /* Секция портфолио с фоном */
+    #portfolio {
+      background-color: var(--portfolio-bg);
       position: relative;
-      text-align: center;
+      overflow: hidden;
     }
     
-    .trends-section::before {
+    #portfolio::before {
       content: "";
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(255,255,255,0.9);
-      z-index: 0;
-    }
-    
-    .trends-content {
-      position: relative;
-      z-index: 1;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    .trends-content h2 {
-      font-size: 2.8rem;
-      margin-bottom: 60px;
-      font-family: 'Playfair Display', serif;
-      color: var(--dark);
-      text-align: center;
-      position: relative;
-    }
-    
-    .trends-content h2:after {
-      content: "";
-      position: absolute;
-      bottom: -20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100px;
-      height: 4px;
-      background: var(--gold);
-    }
-    
-    .trends-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 50px;
-    }
-    
-    .trend-card {
-      background: white;
-      padding: 40px 30px;
-      border-radius: 10px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      text-align: center;
-      transition: all 0.4s ease;
-    }
-    
-    .trend-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-    }
-    
-    .trend-card i {
-      font-size: 3.5rem;
-      color: var(--gold);
-      margin-bottom: 20px;
-    }
-    
-    .trend-card h3 {
-      font-size: 1.8rem;
-      margin-bottom: 20px;
-      font-family: 'Playfair Display', serif;
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23c39d6322' fill-opacity='0.3' fill-rule='evenodd'/%3E%3C/svg%3E");
+      opacity: 0.3;
+      z-index: -1;
     }
     
     .portfolio-tabs {
@@ -327,6 +229,8 @@
       height: 350px;
       transition: all 0.5s ease;
       display: none;
+      background: white;
+      border: 1px solid rgba(195, 157, 99, 0.2);
     }
     
     .portfolio-item.active {
@@ -335,6 +239,7 @@
     
     .portfolio-item:hover {
       transform: scale(1.03);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
     }
     
     .portfolio-item img {
@@ -372,161 +277,115 @@
       font-family: 'Playfair Display', serif;
     }
     
-    .expertise-container {
-      display: flex;
-      justify-content: center;
-      background: white;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-    }
-
-    .skills-list {
-      padding: 50px 40px;
-      width: 100%;
-      max-width: 800px;
-      text-align: center;
-    }
-    
-    .skills-list ul {
-      list-style-type: none;
-      display: inline-block;
-      text-align: left;
-    }
-
-    .skills-list li {
+    /* Стиль для навыков - карточки */
+    #expertise {
+      background-color: var(--skills-bg);
       position: relative;
-      padding-left: 50px;
-      margin-bottom: 25px;
-      font-size: 1.1rem;
-      min-height: 40px;
-      display: flex;
-      align-items: center;
     }
     
-    .skills-list li:before {
-      content: "";
-      position: absolute;
-      left: 0;
-      width: 40px;
-      height: 40px;
-      background: var(--gold);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-family: "Font Awesome 6 Free";
-      font-weight: 900;
-      font-size: 1.2rem;
-    }
-    
-    .skills-list li:nth-child(1):before { content: "\f0c5"; } /* menu */
-    .skills-list li:nth-child(2):before { content: "\f0c0"; } /* users */
-    .skills-list li:nth-child(3):before { content: "\f810"; } /* fermentation */
-    .skills-list li:nth-child(4):before { content: "\f1b2"; } /* sauce */
-    .skills-list li:nth-child(5):before { content: "\f4ce"; } /* suppliers */
-
-  /* Адаптивность */
-  @media (max-width: 768px) {
-    .skills-list {
-      padding: 30px 20px;
-    }
-    
-    .skills-list li {
-      padding-left: 40px;
-      font-size: 1rem;
-    }
-    
-    .skills-list li:before {
-        width: 30px;
-        height: 30px;
-        font-size: 1rem;
-      }
-    }
-    
-    .publications {
-      background: var(--light);
-      border-radius: 15px;
-      padding: 60px 40px;
-    }
-    
-    .publications-grid {
+    .skills-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 40px;
-      max-width: 1000px;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
       margin: 0 auto;
     }
     
-    .publication-card {
+    .skill-card {
       background: white;
       border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
       transition: all 0.4s ease;
+      border-left: 4px solid var(--gold);
       display: flex;
       flex-direction: column;
-      height: 100%;
     }
     
-    .publication-card:hover {
+    .skill-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+      border-left: 4px solid var(--dark);
     }
     
-    .publication-logo {
-      height: 120px;
+    .skill-icon {
+      font-size: 2.5rem;
+      color: var(--gold);
+      margin-bottom: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 20px;
-      background: #f8f8f8;
+      width: 70px;
+      height: 70px;
+      background: rgba(195, 157, 99, 0.1);
+      border-radius: 50%;
     }
     
-    .publication-logo.restoran {
-      background: #1a1a1a;
-    }
-    
-    .publication-logo img {
-      max-height: 70px;
-      max-width: 200px;
-    }
-    
-    .publication-content {
-      padding: 30px;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .publication-content h3 {
+    .skill-title {
       font-size: 1.4rem;
       margin-bottom: 15px;
       font-family: 'Playfair Display', serif;
       color: var(--dark);
+      position: relative;
+      padding-bottom: 10px;
     }
     
-    .publication-content p {
+    .skill-title::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background: var(--gold);
+    }
+    
+    .skill-description {
       color: var(--text-light);
-      margin-bottom: 20px;
+      line-height: 1.7;
       flex-grow: 1;
     }
     
-    .publication-link {
-      display: inline-block;
-      padding: 10px 20px;
-      background: var(--gold);
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
-      font-weight: 500;
-      transition: all 0.3s ease;
+    /* Компактный блок контактов в строку */
+    .contact-container {
+      max-width: 800px;
+      margin: 0 auto;
       text-align: center;
     }
     
-    .publication-link:hover {
-      background: #a88652;
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+    
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      padding: 12px 25px;
+      border-radius: 30px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      min-width: 250px;
+      justify-content: center;
+    }
+    
+    .contact-link:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    
+    .contact-link i {
+      font-size: 1.5rem;
+      color: var(--gold);
     }
     
     footer {
@@ -534,76 +393,6 @@
       color: white;
       padding: 80px 20px 60px;
       text-align: center;
-    }
-    
-    .contact-grid {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      max-width: 1000px;
-      margin: 0 auto;
-      flex-wrap: wrap;
-    }
-    
-    .contact-card {
-      background: rgba(255,255,255,0.05);
-      padding: 40px 30px;
-      border-radius: 10px;
-      transition: all 0.3s ease;
-      min-width: 300px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    .contact-card:hover {
-      background: rgba(255,255,255,0.1);
-      transform: translateY(-10px);
-    }
-    
-    .contact-card i {
-      font-size: 2.5rem;
-      color: var(--gold);
-      margin-bottom: 20px;
-    }
-    
-    .contact-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 20px;
-    }
-    
-    .contact-card a {
-      color: white;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-top: 10px;
-      transition: color 0.3s ease;
-      font-size: 1.2rem;
-    }
-    
-    .contact-card a:hover {
-      color: var(--gold);
-    }
-    
-    .social-badge {
-      display: inline-flex;
-      align-items: center;
-      padding: 10px 20px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 50px;
-      transition: all 0.3s ease;
-    }
-    
-    .social-badge:hover {
-      background: rgba(255,255,255,0.2);
-      transform: translateY(-3px);
-    }
-    
-    .social-badge i {
-      font-size: 1.5rem;
     }
     
     @keyframes fadeInUp {
@@ -627,28 +416,12 @@
         flex-direction: column;
       }
       
-      .expertise-container {
-        flex-direction: column;
-      }
-      
       .about-text p:first-child:first-letter {
         font-size: 2.8rem;
       }
       
-      .trends-content h2 {
-        font-size: 2.2rem;
-      }
-      
-      .contact-grid {
-        flex-wrap: wrap;
-      }
-      
-      .contact-card {
-        flex: 0 0 calc(50% - 40px);
-      }
-      
-      .skills-list li {
-        padding-left: 45px;
+      .skills-container {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       }
     }
     
@@ -669,23 +442,9 @@
         font-size: 2.2rem;
       }
       
-      .contact-card {
-        flex: 0 0 100%;
-        max-width: 400px;
-        margin: 0 auto;
-      }
-      
       .about-text p {
         font-size: 1.05rem;
         line-height: 1.8;
-      }
-      
-      .trends-section {
-        padding: 60px 20px;
-      }
-      
-      .publications-grid {
-        grid-template-columns: 1fr;
       }
       
       .portfolio-tabs {
@@ -695,6 +454,21 @@
       .tab-btn {
         padding: 10px 20px;
         font-size: 0.95rem;
+      }
+      
+      .contact-links {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+      }
+      
+      .contact-link {
+        width: 100%;
+        max-width: 300px;
+      }
+      
+      .skills-container {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -787,16 +561,53 @@
 
   <section id="expertise">
     <h2 class="section-title">Профессиональные навыки</h2>
-    <div class="expertise-container">
-      <div class="skills-list">
-        <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 30px; color: var(--dark);">Экспертиза</h3>
-        <ul>
-          <li>Разработка сезонного меню с учетом локальных продуктов</li>
-          <li>Управление кухней до 15 человек</li>
-          <li>Поиск и работа с надежными поставщиками</li>
-          <li>Планирование и проведение гастроужинов</li>
-          <li>Контроль качества и безопасности</li>
-        </ul>
+    <div class="skills-container">
+      <div class="skill-card">
+        <div class="skill-icon">
+          <i class="fas fa-utensils"></i>
+        </div>
+        <h3 class="skill-title">Разработка меню</h3>
+        <p class="skill-description">Создание основного, банкетного, фуршетного меню и бизнес-ланчей с учетом сезонности и концепции заведения</p>
+      </div>
+      
+      <div class="skill-card">
+        <div class="skill-icon">
+          <i class="fas fa-users"></i>
+        </div>
+        <h3 class="skill-title">Управление персоналом</h3>
+        <p class="skill-description">Набор, обучение команды, планирование штатного расписания и контроль качества работы</p>
+      </div>
+      
+      <div class="skill-card">
+        <div class="skill-icon">
+          <i class="fas fa-clipboard-check"></i>
+        </div>
+        <h3 class="skill-title">Контроль качества</h3>
+        <p class="skill-description">Контроль технологии приготовления блюд, проведение инвентаризации остатков продукции</p>
+      </div>
+      
+      <div class="skill-card">
+        <div class="skill-icon">
+          <i class="fas fa-file-alt"></i>
+        </div>
+        <h3 class="skill-title">Документация</h3>
+        <p class="skill-description">Разработка и ведение технологических карт, стандартов приготовления</p>
+      </div>
+      
+      <div class="skill-card">
+        <div class="skill-icon">
+          <i class="fas fa-truck"></i>
+        </div>
+        <h3 class="skill-title">Работа с поставщиками</h3>
+        <p class="skill-description">Анализ и выбор поставщиков, контроль ассортимента, качества, количества и сроков поступления товара</p>
+      </div>
+      
+      <div class="skill-card">
+        <div class="skill-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <h3 class="skill-title">Финансовый анализ</h3>
+        <p class="skill-description">Анализ себестоимости блюд, контроль продаж и рентабельности кухни</p>
       </div>
     </div>
   </section>
@@ -804,28 +615,21 @@
   <footer id="contact">
     <h2 class="section-title" style="color: white;">Контакты</h2>
     
-    <div class="contact-grid">
-      <div class="contact-card">
-        <i class="fas fa-envelope"></i>
-        <h3>Email</h3>
-        <a href="mailto:evgeny.malin@email.com" class="social-badge">
-          <i class="fas fa-envelope"></i> evgeny.malin@email.com
+    <div class="contact-container">
+      <div class="contact-links">
+        <a href="mailto:e.malin@mail.ru" class="contact-link">
+          <i class="fas fa-envelope"></i>
+          <span>e.malin@mail.ru</span>
         </a>
-      </div>
-      
-      <div class="contact-card">
-        <i class="fab fa-telegram"></i>
-        <h3>Telegram</h3>
-        <a href="https://t.me/chef_evgeny_malin" target="_blank" class="social-badge">
-          <i class="fab fa-telegram"></i> @chef_evgeny_malin
+        
+        <a href="https://t.me/chef_evgeny_malin" target="_blank" class="contact-link">
+          <i class="fab fa-telegram"></i>
+          <span>@chef_evgeny_malin</span>
         </a>
-      </div>
-      
-      <div class="contact-card">
-        <i class="fab fa-whatsapp"></i>
-        <h3>WhatsApp</h3>
-        <a href="https://wa.me/79991234567" target="_blank" class="social-badge">
-          <i class="fab fa-whatsapp"></i> +7 (999) 123-45-67
+        
+        <a href="https://wa.me/79991234567" target="_blank" class="contact-link">
+          <i class="fab fa-whatsapp"></i>
+          <span>+7 (999) 123-45-67</span>
         </a>
       </div>
     </div>
@@ -835,7 +639,7 @@
     // Анимация при прокрутке
     document.addEventListener('DOMContentLoaded', function() {
       const animatedItems = document.querySelectorAll(
-        '.portfolio-item, .philosophy-card, .contact-card, .about-image, .expertise-container, .trend-card, .publication-card'
+        '.portfolio-item, .about-image, .skill-card'
       );
       
       // Инициализация анимации
