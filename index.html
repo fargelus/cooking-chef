@@ -18,6 +18,7 @@
       --text-light: #666;
       --portfolio-bg: #f9f6f1;
       --skills-bg: #f5f2ec;
+      --contact-bg: #0f0f0f;
     }
     
     * {
@@ -98,9 +99,10 @@
     }
     
     section {
-      padding: 100px 20px;
+      padding: 120px 20px;
       max-width: 1200px;
       margin: auto;
+      position: relative;
     }
     
     h2.section-title {
@@ -158,6 +160,8 @@
       box-shadow: 0 20px 40px rgba(0,0,0,0.15);
       transform: rotate(-2deg);
       transition: transform 0.4s ease;
+      position: relative;
+      z-index: 1;
     }
     
     .about-image:hover {
@@ -208,6 +212,8 @@
       font-weight: 600;
       cursor: pointer;
       transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
     
     .tab-btn:hover, .tab-btn.active {
@@ -300,6 +306,8 @@
       border-left: 4px solid var(--gold);
       display: flex;
       flex-direction: column;
+      position: relative;
+      z-index: 1;
     }
     
     .skill-card:hover {
@@ -348,7 +356,7 @@
     
     /* Компактный блок контактов в строку */
     .contact-container {
-      max-width: 800px;
+      max-width: 1000px;
       margin: 0 auto;
       text-align: center;
     }
@@ -356,8 +364,8 @@
     .contact-links {
       display: flex;
       justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
+      gap: 15px;
+      flex-wrap: nowrap;
       margin-top: 40px;
     }
     
@@ -369,12 +377,15 @@
       text-decoration: none;
       font-size: 1.1rem;
       transition: all 0.3s ease;
-      padding: 12px 25px;
+      padding: 15px 25px;
       border-radius: 30px;
       background: rgba(255,255,255,0.1);
       border: 1px solid rgba(255,255,255,0.2);
-      min-width: 250px;
+      min-width: auto;
+      flex: 1;
+      max-width: 300px;
       justify-content: center;
+      white-space: nowrap;
     }
     
     .contact-link:hover {
@@ -389,10 +400,21 @@
     }
     
     footer {
-      background: var(--dark);
+      background: var(--contact-bg);
       color: white;
-      padding: 80px 20px 60px;
+      padding: 100px 20px 80px;
       text-align: center;
+      position: relative;
+    }
+    
+    footer::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 10px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
     }
     
     @keyframes fadeInUp {
@@ -406,7 +428,28 @@
       }
     }
     
+    /* Анимация загрузки элементов */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    
     /* Адаптивность */
+    @media (max-width: 1200px) {
+      .contact-links {
+        flex-wrap: wrap;
+      }
+      
+      .contact-link {
+        min-width: 250px;
+        flex: none;
+      }
+    }
+    
     @media (max-width: 992px) {
       header h1 {
         font-size: 3.5rem;
@@ -423,6 +466,10 @@
       .skills-container {
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       }
+      
+      section {
+        padding: 100px 20px;
+      }
     }
     
     @media (max-width: 768px) {
@@ -435,7 +482,7 @@
       }
       
       section {
-        padding: 70px 20px;
+        padding: 80px 20px;
       }
       
       h2.section-title {
@@ -470,6 +517,38 @@
       .skills-container {
         grid-template-columns: 1fr;
       }
+      
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* Декоративные элементы */
+    .decor-element {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      border: 2px solid var(--gold);
+      opacity: 0.1;
+      z-index: 0;
+    }
+    
+    .decor-element-1 {
+      top: 20%;
+      left: 5%;
+      border-radius: 50%;
+    }
+    
+    .decor-element-2 {
+      bottom: 10%;
+      right: 5%;
+      transform: rotate(45deg);
+    }
+    
+    .decor-element-3 {
+      top: 40%;
+      right: 10%;
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
     }
   </style>
 </head>
@@ -483,6 +562,7 @@
   </header>
 
   <section id="about">
+    <div class="decor-element decor-element-1"></div>
     <h2 class="section-title">Обо мне</h2>
     <div class="about-content">
       <div class="about-text">
@@ -496,6 +576,7 @@
   </section>
 
   <section id="portfolio">
+    <div class="decor-element decor-element-2"></div>
     <h2 class="section-title">Портфолио</h2>
     
     <div class="portfolio-tabs">
@@ -560,6 +641,7 @@
   </section>
 
   <section id="expertise">
+    <div class="decor-element decor-element-3"></div>
     <h2 class="section-title">Профессиональные навыки</h2>
     <div class="skills-container">
       <div class="skill-card">
@@ -617,9 +699,9 @@
     
     <div class="contact-container">
       <div class="contact-links">
-        <a href="mailto:e.malin@mail.ru" class="contact-link">
+        <a href="mailto:evgeny.malin@email.com" class="contact-link">
           <i class="fas fa-envelope"></i>
-          <span>e.malin@mail.ru</span>
+          <span>evgeny.malin@email.com</span>
         </a>
         
         <a href="https://t.me/chef_evgeny_malin" target="_blank" class="contact-link">
@@ -639,7 +721,7 @@
     // Анимация при прокрутке
     document.addEventListener('DOMContentLoaded', function() {
       const animatedItems = document.querySelectorAll(
-        '.portfolio-item, .about-image, .skill-card'
+        '.portfolio-item, .about-image, .skill-card, .tab-btn'
       );
       
       // Инициализация анимации
@@ -688,6 +770,12 @@
             if (category === 'all' || item.getAttribute('data-category') === category) {
               setTimeout(() => {
                 item.classList.add('active');
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                  item.style.opacity = '1';
+                  item.style.transform = 'translateY(0)';
+                }, 50);
               }, 10);
             }
           });
